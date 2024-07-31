@@ -168,8 +168,6 @@ vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
--- vim.keymap.set('n', '<leader>`', '<CMD>! wezterm start --cwd ${PWD}<CR>', { silent = true, desc = 'Start New Wezterm' })
-
 vim.opt.wrap = false
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -244,13 +242,13 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup 'plugins'
 
-local get_css_sugessions = function(cssfile)
-  local a = require('plenary.path'):new(cssfile)
-  vim.notify(a:read():gsub('\\', ''))
-end
-
-vim.keymap.set('n', '<leader>l', function()
-  get_css_sugessions 'app.css'
-end)
+-- local get_css_sugessions = function(cssfile)
+--   local a = require('plenary.path'):new(cssfile)
+--   vim.notify(a:read():gsub('\\', ''))
+-- end
+--
+-- vim.keymap.set('n', '<leader>l', function()
+--   get_css_sugessions 'app.css'
+-- end)
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

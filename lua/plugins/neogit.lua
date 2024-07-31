@@ -7,7 +7,9 @@ return {
       'nvim-telescope/telescope.nvim',
     },
     config = function()
-      require('neogit').setup {}
+      require('neogit').setup {
+        graph_style = 'unicode',
+      }
     end,
   },
 }

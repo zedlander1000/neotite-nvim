@@ -23,10 +23,22 @@ return {
     },
   },
   init = function()
-    vim.fn.sign_define('DiagnosticSignError', { text = ' ', texthl = 'DiagnosticSignError' })
-    vim.fn.sign_define('DiagnosticSignWarn', { text = ' ', texthl = 'DiagnosticSignWarn' })
-    vim.fn.sign_define('DiagnosticSignInfo', { text = ' ', texthl = 'DiagnosticSignInfo' })
-    vim.fn.sign_define('DiagnosticSignHint', { text = '󰌵', texthl = 'DiagnosticSignHint' })
+    vim.diagnostic.config {
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = ' ',
+          [vim.diagnostic.severity.WARN] = ' ',
+          [vim.diagnostic.severity.INFO] = ' ',
+          [vim.diagnostic.severity.HINT] = '󰌵',
+        },
+        linehl = {
+          [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+        },
+        numhl = {
+          [vim.diagnostic.severity.WARN] = 'WarningMsg',
+        },
+      },
+    }
     require('neo-tree').setup {
       filesystem = {
         filtered_items = {
@@ -81,7 +93,7 @@ return {
       vim.keymap.set(
         { 'n', 'v' },
         '<leader>e' .. source:sub(0, 1),
-        '<CMD>Neotree toggle ' .. source .. '<CR>',
+        '<CMD>Neotree toggle focus' .. source .. '<CR>',
         { desc = 'Toggle Neotree source (' .. source .. ')' }
       )
     end

@@ -6,6 +6,10 @@ return {
         icons_enabled = true,
         component_separators = '|',
         section_separators = '',
+        theme = 'tokyonight',
+      },
+      sections = {
+        lualine_c = { { 'filename', path = 1 } },
       },
       tabline = {
         lualine_a = { 'buffers' },
