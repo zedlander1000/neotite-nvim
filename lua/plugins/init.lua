@@ -57,7 +57,7 @@ return {
     lazy = false,
     keys = {
       {
-        '<leader>f',
+        '<leader>ff',
         function()
           require('conform').format { async = true, lsp_fallback = true }
         end,
@@ -77,8 +77,18 @@ return {
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
+      formatters = {
+        sql_formatter = {
+          prepend_args = { '-c', vim.fn.expand '~/.config/sql_formatter.json' },
+        },
+        -- sqlfluff = {
+        --   prepend_args = { '--config', vim.fn.expand '~/.config/.sqruff' },
+        -- },
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
+        -- sql = { 'pg_format' },
+        -- ['*'] = { 'injected' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -126,4 +136,5 @@ return {
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
+  { 'dbmrq/vim-dialect' },
 }

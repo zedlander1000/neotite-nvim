@@ -4,8 +4,16 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'css', 'scss', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'elixir', 'eex', 'heex', 'erlang' },
-      -- Autoinstall languages that are not installed
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'css', 'scss', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'elixir', 'eex', 'heex', 'erlang', 'sql' },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = '<C-l>',
+          node_incremental = '<C-l>',
+          scope_incremental = false,
+          node_decremental = '<C-h>',
+        },
+      },
       auto_install = true,
       highlight = {
         enable = true,
@@ -27,7 +35,6 @@ return {
       -- There are additional nvim-treesitter modules that you can use to interact
       -- with nvim-treesitter. You should go explore a few and see what interests you:
       --
-      --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
       --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,

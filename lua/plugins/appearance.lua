@@ -10,6 +10,7 @@ return {
       }
       vim.cmd.colorscheme 'tokyonight-moon'
       vim.cmd.hi 'Comment gui=none'
+      vim.cmd.hi 'clear Folded'
     end,
   },
   -- Highlight todo, notes, etc in comments

@@ -1,7 +1,6 @@
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -68,9 +67,17 @@ vim.opt.scrolloff = 999
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
-vim.o.foldcolumn = '1'
+vim.o.foldcolumn = 'auto:9'
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+vim.o.fillchars = 'eob: ,fold: ,foldopen:,foldsep:│,foldclose:'
 
 vim.opt.wrap = false
+
+vim.opt.spelllang = { 'en_us' }
+vim.opt.spell = true
+vim.opt.spelloptions = 'camel'
+vim.opt.spellcapcheck = ''
+
+vim.opt.conceallevel = 1
