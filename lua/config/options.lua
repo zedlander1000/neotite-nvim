@@ -1,22 +1,16 @@
--- [[ Setting options ]]
--- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
-
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
-vim.opt.number = true -- Make line numbers default
+vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.mouse = 'a' -- Enable mouse mode
+vim.opt.mouse = 'a'
 
-vim.opt.showmode = false -- Don't show the mode, since it's already in the status line
+vim.opt.undofile = true
 
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
---  vim.opt.clipboard = 'unnamedplus'
+-- Don't show the mode, since it's already in the status line
+vim.opt.showmode = false
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -47,8 +41,6 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
@@ -60,9 +52,6 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 999
-
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
