@@ -4,7 +4,25 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'css', 'scss', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'elixir', 'eex', 'heex', 'erlang', 'sql' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'cpp',
+        'diff',
+        'html',
+        'css',
+        'scss',
+        'lua',
+        'luadoc',
+        'markdown',
+        'vim',
+        'vimdoc',
+        'elixir',
+        'eex',
+        'heex',
+        'erlang',
+        'sql',
+      },
       incremental_selection = {
         enable = true,
         keymaps = {

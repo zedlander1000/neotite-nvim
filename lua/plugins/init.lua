@@ -92,7 +92,7 @@ return {
         lua = { 'stylua' },
         markdown = { 'prettier' },
         elixir = { 'mix' },
-        -- sql = { 'pg_format' },
+        sql = { 'pg_format' },
         -- ['*'] = { 'injected' },
         -- python = { "isort", "black" },
       },

@@ -144,8 +144,8 @@ return {
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
-      { 'williamboman/mason.nvim', opts = {} },
-      'williamboman/mason-lspconfig.nvim',
+      { 'mason-org/mason.nvim', opts = {} },
+      'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
       'hrsh7th/cmp-nvim-lsp',
@@ -276,6 +276,7 @@ return {
             elixirLs = { dializerEnabled = true },
           },
         },
+        -- expert = {},
         tailwindcss = {
           settings = {
             tailwindCSS = {
@@ -325,6 +326,7 @@ return {
             },
           },
         },
+        clangd = {},
       }
 
       -- You can add other tools here that you want Mason to install
