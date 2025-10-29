@@ -1,5 +1,22 @@
 return {
   {
+    'sindrets/diffview.nvim',
+  },
+  {
+    'NeogitOrg/neogit',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'sindrets/diffview.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
+    config = function()
+      require('neogit').setup {
+        graph_style = 'unicode',
+        integrations = { diffview = true, telescope = true },
+      }
+    end,
+  },
+  {
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
@@ -58,7 +75,7 @@ return {
         end, { desc = 'git [D]iff against last commit' })
         -- Toggles
         map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
-        map('n', '<leader>tD', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
+        map('n', '<leader>tD', gitsigns.preview_hunk_inline, { desc = '[T]oggle git show [D]eleted' })
         map('n', '<leader>th', function()
           gitsigns.toggle_linehl()
           gitsigns.toggle_numhl()

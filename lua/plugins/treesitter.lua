@@ -22,6 +22,8 @@ return {
         'heex',
         'erlang',
         'sql',
+        'python',
+        'javascript',
       },
       incremental_selection = {
         enable = true,
