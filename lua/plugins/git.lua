@@ -1,8 +1,5 @@
 return {
   {
-    'sindrets/diffview.nvim',
-  },
-  {
     'NeogitOrg/neogit',
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -10,10 +7,19 @@ return {
       'nvim-telescope/telescope.nvim',
     },
     config = function()
-      require('neogit').setup {
+      local neogit = require 'neogit'
+      neogit.setup {
         graph_style = 'unicode',
         integrations = { diffview = true, telescope = true },
       }
+      vim.keymap.set('n', '<leader>;', function()
+        local instance = neogit.status.instance()
+        if instance and instance:is_open() then
+          neogit.close()
+        else
+          neogit.open()
+        end
+      end, { desc = 'Open Neogit UI' })
     end,
   },
   {

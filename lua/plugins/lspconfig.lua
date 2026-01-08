@@ -315,7 +315,8 @@ return {
         },
         -- lexical = {},
         cssls = {},
-        sqlls = {},
+        -- sqlls = {},
+        postgres_lsp = {},
         lua_ls = {
           settings = {
             Lua = {

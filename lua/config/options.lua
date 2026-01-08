@@ -56,8 +56,8 @@ vim.opt.scrolloff = 999
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
-vim.o.foldcolumn = 'auto:9'
-vim.o.foldlevel = 99
+vim.o.foldcolumn = '0'
+vim.o.foldlevel = 0
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = 'eob: ,fold: ,foldopen:,foldsep:│,foldclose:'
