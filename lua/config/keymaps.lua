@@ -33,3 +33,9 @@ vim.keymap.set('n', '<M-C-S-F4>', '<CMD>%bd!<CR>', { desc = 'Close all buffers' 
 vim.keymap.set('i', '<C-R>', '<Esc>R', { desc = 'Enter replace mode ' })
 vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('v', '<', '<gv')
+
+vim.keymap.set('n', '<leader>pc', ':let @+ = expand("%")<CR>',
+  { noremap = true, desc = 'Copy relative filepath of buffer.' })
+
+vim.api.nvim_create_user_command('BD', '%bd', { desc = 'Delete all buffers' })
+vim.cmd('cnoreabbrev bD BD')
