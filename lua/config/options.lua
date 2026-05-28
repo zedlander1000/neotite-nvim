@@ -70,3 +70,5 @@ vim.opt.spelloptions = 'camel'
 vim.opt.spellcapcheck = ''
 
 vim.opt.conceallevel = 1
+
+vim.lsp.document_color.enable(true, nil, { style = '[]' })
