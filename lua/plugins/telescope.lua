@@ -2,7 +2,9 @@ return {
   {
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
-    branch = '0.1.x',
+    -- master (not 0.1.x) uses native vim.treesitter APIs in its previewer,
+    -- required for compatibility with nvim-treesitter's `main` rewrite.
+    branch = 'master',
     dependencies = {
       'nvim-lua/plenary.nvim',
       {
